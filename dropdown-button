@@ -1,0 +1,81 @@
+<html>
+<head>
+<style>
+/* dropdown button */
+.dropdown-button {
+    background-color: #d60036;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+/* hide dropdown content */
+.dropdown-list {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+/* dropdown links */
+.dropdown-list a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: verdana;
+}
+/* hovered links color */
+.dropdown-list a:hover {
+    background-color: #ddd;
+}
+/* hover show list */
+.dropdown:hover .dropdown-list {
+    display: block;
+}
+/* change color of button when list is shown */
+.dropdown:hover .dropdown-button {
+    background-color: #578ad6;
+}
+</style>
+<script>
+var nav = $("#topNav");
+
+//add indicators and hovers to submenu parents
+nav.find("li").each(function() {
+    if ($(this).find("ul").length > 0) {
+
+        $("<span>").text("^").appendTo($(this).children(":first"));
+
+        //show subnav on hover
+        $(this).click(function() {
+            $(this).find("ul").stop(true, true).slideToggle();
+        });
+    }
+});
+</script>
+</head>
+<body>
+	<div class="dropdown">
+		<button class="dropdown-button">Select Location</button>
+		<div class="dropdown-list">
+			<a href="https://signup.myiclubonline.com/iclub/signup/home.htm#plans?clubNumber=6752">Beecher</a>
+			<a href="https://signup.myiclubonline.com/iclub/signup/home.htm#plans?clubNumber=6793">Bourbonnais</a>
+      <a href="https://signup.myiclubonline.com/iclub/signup/home.htm#plans?clubNumber=6796">Champaign</a>
+      <a href="https://signup.myiclubonline.com/iclub/signup/home.htm#plans?clubNumber=6754">Crete</a>
+      <a href="https://signup.myiclubonline.com/iclub/signup/home.htm#plans?clubNumber=6756">Lowell</a>
+      <a href="https://signup.myiclubonline.com/iclub/signup/home.htm#plans?clubNumber=6746">Manhattan</a>
+      <a href="https://signup.myiclubonline.com/iclub/signup/home.htm#plans?clubNumber=6739">Manteno</a>
+      <a href="https://signup.myiclubonline.com/iclub/signup/home.htm#plans?clubNumber=6794">Minooka</a>
+      <a href="https://signup.myiclubonline.com/iclub/signup/home.htm#plans?clubNumber=6742">Monee</a>
+      <a href="https://signup.myiclubonline.com/iclub/signup/home.htm#plans?clubNumber=6768">Pontiac</a>
+      <a href="https://signup.myiclubonline.com/iclub/signup/home.htm#plans?clubNumber=6776">Streator</a>
+		</div>
+	</div>
+</body>
+</html>
